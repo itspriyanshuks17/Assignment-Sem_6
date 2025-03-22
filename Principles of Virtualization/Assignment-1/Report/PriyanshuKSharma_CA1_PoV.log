@@ -1,0 +1,304 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.6.14)  22 MAR 2025 14:11
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**"d:/SEM-6/Assignment-Sem_6/Principles of Virtualization/Assignment-1/Report/PriyanshuKSharma_CA1_PoV.tex"
+(d:/SEM-6/Assignment-Sem_6/Principles of Virtualization/Assignment-1/Report/PriyanshuKSharma_CA1_PoV.tex
+LaTeX2e <2024-06-01>
+L3 programming layer <2024-05-08>
+(C:\Users\priya\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
+Document Class: article 2024/02/08 v1.4n Standard LaTeX document class
+(C:\Users\priya\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
+File: size12.clo 2024/02/08 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count194
+\c@section=\count195
+\c@subsection=\count196
+\c@subsubsection=\count197
+\c@paragraph=\count198
+\c@subparagraph=\count199
+\c@figure=\count266
+\c@table=\count267
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen141
+) (C:\Users\priya\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (C:\Users\priya\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+) (C:\Users\priya\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+ (C:\Users\priya\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (C:\Users\priya\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+ (C:\Users\priya\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen142
+\Gin@req@width=\dimen143
+) (C:\Users\priya\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count268
+\float@exts=\toks18
+\float@box=\box52
+\@float@everytoks=\toks19
+\@floatcapt=\box53
+) (C:\Users\priya\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (C:\Users\priya\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+ (C:\Users\priya\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+\Gm@cnth=\count269
+\Gm@cntv=\count270
+\c@Gm@tempcnt=\count271
+\Gm@bindingoffset=\dimen144
+\Gm@wd@mp=\dimen145
+\Gm@odd@mp=\dimen146
+\Gm@even@mp=\dimen147
+\Gm@layoutwidth=\dimen148
+\Gm@layoutheight=\dimen149
+\Gm@layouthoffset=\dimen150
+\Gm@layoutvoffset=\dimen151
+\Gm@dimlist=\toks20
+ (C:\Users\priya\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)) (C:\Users\priya\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count272
+\l__pdf_internal_box=\box54
+) (PriyanshuKSharma_CA1_PoV.aux)
+\openout1 = `PriyanshuKSharma_CA1_PoV.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+ (C:\Users\priya\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count273
+\scratchdimen=\dimen152
+\scratchbox=\box55
+\nofMPsegments=\count274
+\nofMParguments=\count275
+\everyMPshowfont=\toks21
+\MPscratchCnt=\count276
+\MPscratchDim=\dimen153
+\MPnumerator=\count277
+\makeMPintoPDFobject=\count278
+\everyMPtoPDFconversion=\toks22
+) (C:\Users\priya\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (C:\Users\priya\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(72.26999pt, 452.9679pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 700.50687pt, 72.26999pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=452.9679pt
+* \textheight=700.50687pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=35.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+LaTeX Warning: File `images/university.png' not found on input line 11.
+
+
+d:/SEM-6/Assignment-Sem_6/Principles of Virtualization/Assignment-1/Report/PriyanshuKSharma_CA1_PoV.tex:11: Package pdftex.def Error: File `images/university.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.11 ...idth=0.3\textwidth]{images/university.png}
+                                                    % Replace with your univ...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `images/vmware_workstation_setup.png' not found on input line 42.
+
+
+d:/SEM-6/Assignment-Sem_6/Principles of Virtualization/Assignment-1/Report/PriyanshuKSharma_CA1_PoV.tex:42: Package pdftex.def Error: File `images/vmware_workstation_setup.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.42 ...idth]{images/vmware_workstation_setup.png}
+                                                    % Replace with actual sc...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+
+[1
+
+{C:/Users/priya/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+
+LaTeX Warning: File `images/guest_os.png' not found on input line 48.
+
+
+d:/SEM-6/Assignment-Sem_6/Principles of Virtualization/Assignment-1/Report/PriyanshuKSharma_CA1_PoV.tex:48: Package pdftex.def Error: File `images/guest_os.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.48 ...[width=0.8\textwidth]{images/guest_os.png}
+                                                    % Replace with actual sc...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+
+[2]
+
+d:/SEM-6/Assignment-Sem_6/Principles of Virtualization/Assignment-1/Report/PriyanshuKSharma_CA1_PoV.tex:54: LaTeX Error: File `ima' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.54 ...\includegraphics[width=0.8\textwidth]{ima}
+                                                    % Replace with actual sc...
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `images/adapter_config.png' not found on input line 72.
+
+
+d:/SEM-6/Assignment-Sem_6/Principles of Virtualization/Assignment-1/Report/PriyanshuKSharma_CA1_PoV.tex:72: Package pdftex.def Error: File `images/adapter_config.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.72 ...=0.8\textwidth]{images/adapter_config.png}
+                                                    % Replace with actual sc...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+
+[3]
+
+LaTeX Warning: File `images/dhcp_config.png' not found on input line 97.
+
+
+d:/SEM-6/Assignment-Sem_6/Principles of Virtualization/Assignment-1/Report/PriyanshuKSharma_CA1_PoV.tex:97: Package pdftex.def Error: File `images/dhcp_config.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.97 ...dth=0.8\textwidth]{images/dhcp_config.png}
+                                                    % Replace with actual sc...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+
+[4]
+
+LaTeX Warning: File `images/network_adapter.png' not found on input line 103.
+
+
+d:/SEM-6/Assignment-Sem_6/Principles of Virtualization/Assignment-1/Report/PriyanshuKSharma_CA1_PoV.tex:103: Package pdftex.def Error: File `images/network_adapter.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.103 ....8\textwidth]{images/network_adapter.png}
+                                                    % Replace with actual sc...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+
+[5]
+
+LaTeX Warning: File `images/Configure Management Network.png' not found on input line 124.
+
+
+d:/SEM-6/Assignment-Sem_6/Principles of Virtualization/Assignment-1/Report/PriyanshuKSharma_CA1_PoV.tex:124: Package pdftex.def Error: File `images/Configure Management Network.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.124 ...{images/Configure Management Network.png}
+                                                    % Replace with actual sc...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+
+[6]
+
+[7] (PriyanshuKSharma_CA1_PoV.aux)
+ ***********
+LaTeX2e <2024-06-01>
+L3 programming layer <2024-05-08>
+ ***********
+ ) 
+Here is how much of TeX's memory you used:
+ 2159 strings out of 473938
+ 40178 string characters out of 5727391
+ 1931893 words of memory out of 5000000
+ 25018 multiletter control sequences out of 15000+600000
+ 560698 words of font info for 45 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 57i,5n,65p,371b,258s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\priya\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/priya/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/priya/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/priya/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on PriyanshuKSharma_CA1_PoV.pdf (7 pages, 57535 bytes).
+PDF statistics:
+ 46 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
