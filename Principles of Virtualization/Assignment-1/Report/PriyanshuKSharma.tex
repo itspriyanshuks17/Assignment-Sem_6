@@ -1,0 +1,354 @@
+%-------------------------
+% Resume in Latex
+% Author : Priyanshu K Sharma
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\usepackage{graphicx}%\setmainfont{Times New Roman}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+\RequirePackage{tikz}
+\RequirePackage{xcolor}
+
+\definecolor{cvblue}{HTML}{0E5484}
+\definecolor{black}{HTML}{130810}
+\definecolor{darkcolor}{HTML}{0F4539}
+\definecolor{cvgreen}{HTML}{3BD80D}
+\definecolor{taggreen}{HTML}{00E278}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\colorlet{name}{black}
+\colorlet{tagline}{darkcolor}
+\colorlet{heading}{darkcolor}
+\colorlet{headingrule}{cvblue}
+\colorlet{accent}{darkcolor}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% \usepackage[T1]{fontenc}
+% \usepackage[T1]{fontenc}
+% \usepackage{cochineal}
+% \usepackage{fourier}
+
+% \usepackage{fontspec}
+% \usepackage{polyglossia}
+% \setmainlanguage{german}
+% \setmainfont{Times New Roman}
+
+% serif
+\usepackage{CormorantGaramond}
+\usepackage{charter}
+
+% \pagestyle{fancy}
+% \fancyhf{}  % clear all header and footer fields
+% \fancyfoot{}
+% \renewcommand{\headrulewidth}{0pt}
+% \renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+\urlstyle{same}
+
+\definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-1pt}}
+  }
+}
+
+\newcommand{\classesList}[4]{
+    \item\small{
+        {#1 #2 #3 #4 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{\large#1} & \textbf{\small #2} \\
+      \textit{\large#3} & \textit{\small #4} \\
+      
+    \end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeSingleSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{\large#1} & \textbf{\small #2} \\
+      
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.1in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\newcommand\sbullet[1][.5]{\mathbin{\vcenter{\hbox{\scalebox{#1}{$\bullet$}}}}}
+
+%-------------------------------------------\usepackage{fontspec}
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+%----------HEADING----------
+
+
+\begin{center}
+    {\huge Priyanshu Kumar Sharma} \\ \vspace{2pt} 
+    {+91 93923 81422} ~ 
+    \small{-}
+    \href{priyanshu17ks@gmail.com}{\color{blue}{priyanshu17ks@gmail.com}} ~ 
+    \small{-}
+    \href{https://www.linkedin.com/in/priyanshu-kumar-sharma-333800251/}{ \color{blue}{LinkedIn}}  ~
+    \small{-}
+    \href{https://github.com/PriyanshuKSharma/}{ \color{blue}{GitHub}} ~
+    \small{-}
+    \href{https://hub.docker.com/u/priyanshuksharma}{\color{blue}{DockerHub}} ~
+    \vspace{-7pt}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{\color{airforceblue}EDUCATION}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Ajeenkya D Y Patil University}{Pune, India}
+      {B.Tech in (IT) Cloud Technology and Information Security {| CGPA:9.89}}{Aug 2022 - Ongoing}
+    \vspace{-4pt}
+     \resumeSubheading
+      {Sri Chaitanya Jr. Kalasala}{Hyderabad, India}
+      {Higher Secondary Education {| Percentage: 93.9}}{April 2020 - May 2022}
+    \vspace{-4pt}
+     \resumeSubheading
+      {Sri Chaitanya High School}{Hyderabad, India}
+      {Secondary Education {| Percentage: 87.6}}{April 2018 - March 2020}
+
+    
+  \resumeSubHeadingListEnd
+  \vspace{-10pt}
+
+%-----------PROGRAMMING SKILLS-----------
+\section{\color{airforceblue}TECHNICAL SKILLS}
+ \begin{itemize}[leftmargin=0in, label={}]
+    \small{\item{
+     \textbf{\normalsize{Programming Languages:}}{ \normalsize{C, Python, Java, Dart, SQL, Shell Scripting}} \\
+      \vspace{1.8pt}
+
+      \textbf{\normalsize{Development:}}{ \normalsize{HTML, CSS, Flutter}} \\
+      \vspace{1.8pt}
+
+      \textbf{\normalsize{DevOps Tools:}}{ \normalsize{Git/GitHub, Terraform, Pulumi, GitLab, Redis}} \\
+      \vspace{1.8pt}
+
+      \textbf{\normalsize{Cybersecurity Tools:}}{ \normalsize{Nmap, Nslookup, Lynis, Wireshark, SQLmap, Metasploit}} \\
+      \vspace{1.8pt}
+
+      \textbf{\normalsize{Cloud Computing:}}{ \normalsize{AWS, Azure}} \\
+      \vspace{1.8pt}
+      
+     \textbf{\normalsize{Languages:}}{ \normalsize{English, Hindi, Gujarati}}
+
+     % copy and paste above textbf block to add more 
+     }}
+ \end{itemize}
+ \vspace{-16pt}
+ 
+ %-----------EXPERIENCE-----------
+\section{\color{airforceblue}WORK EXPERIENCE}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Network Security Associate Virtual Intern}{} 
+      {\textbf{EduSkills Foundation, Pune}}{July 2024 - September 2024}
+      \resumeItemListStart
+            \resumeItem{\normalsize{Completed the \textbf{Fortinet Network Security Associate Virtual Internshi}p, organized by \textbf{AICTE and EduSkills.}}}
+            \resumeItem{\normalsize{Gained knowledge in network security principles and their application in protecting network infrastructures.}}  
+            \resumeItem{\normalsize{Developed skills in identifying and mitigating network threats and vulnerabilities.}}
+            \resumeItem{\normalsize{Learned about the latest trends and best practices in network security.}}
+            
+      \resumeItemListEnd  
+      \vspace{2pt}
+      
+    \resumeSubheading
+      {Cloud Research Intern}{} 
+      {\textbf{Indian Institute of Technology Ropar, Punjab} }{May 2024 - July 2024}
+      \resumeItemListStart
+            \resumeItem{\normalsize{Involved in research projects under an IIT professor}}
+            \resumeItem{\normalsize{Working on the implementation of \textbf{XFBench} and \textbf{XFaaS.}}}  
+            \resumeItem{\normalsize{Developing serverless function implementation.}}
+            \resumeItem{\normalsize{Conducting performance analysis and optimisation of serverless functions.}}
+            \resumeItem{\normalsize{Part of the \textbf{Summer Research Fellowship Program}, 2024 by the \textbf{Indian Academy of Science, Bangalore}.}}
+      \resumeItemListEnd
+      \vspace{2pt}
+      
+    \resumeSubheading
+      {Cloud Security Virtual Intern}{} 
+      {\textbf{EduSkills Foundation, Pune }}{April 2024 - June 2024}
+      \resumeItemListStart
+            \resumeItem{\normalsize{Completed the \textbf{Zscaler Zero Trust Cloud Security Virtual Internship}, organised by \textbf{AICTE} and \textbf{EduSkills}.}}
+            \resumeItem{\normalsize{Gained knowledge in \textbf{Zero Trust Principles} and their application in cloud security.}}  
+            \resumeItem{\normalsize{Developed skills in securing cloud environments and protecting data assets.}}
+            \resumeItem{\normalsize{Learned about the latest trends and best practices in cloud security.}}
+      \resumeItemListEnd  
+
+    % copy and paste above resumeSubheading block to add more 
+  \resumeSubHeadingListEnd
+\vspace{-12pt}
+
+
+ %-----------PROJECTS-----------
+\section{\color{airforceblue}PROJECTS}    
+    \resumeItemListStart
+        \vspace{0.5pt}
+        
+        \resumeItem{\normalsize{\textbf{Quantum Cloud Integration}, Developed a hybrid cloud-quantum system integrating cloud computing with quantum processing for enhanced computational efficiency. 
+        \newline 
+        Features:
+        \begin{itemize}
+            \item Workflow integration between classical cloud and quantum systems.
+            \item Secure and scalable hybrid cloud implementation.
+            \item \textbf{Tools Used:} AWS, IBM Quantum, and Docker.
+        \end{itemize}} 
+        \href{https://github.com/PriyanshuKSharma/quantum-cloud-integration}{\color{blue}\underline{GitHub}}}
+        \vspace{2.5pt}
+
+        \newpage
+        
+        \resumeItem{\normalsize{\textbf{SkyVault}, Built a personal cloud storage system using Docker containers, providing an interactive UI. 
+        \newline
+        Features:
+        \begin{itemize}
+            \item File uploading, listing, and downloading functionalities.
+            \item Dockerized deployment for easy scalability.
+            \item Secure authentication and data storage.
+            \item \textbf{Tools Used:} Flask, HTML, CSS and Docker.
+        \end{itemize}} 
+        \href{https://github.com/PriyanshuKSharma/SkyVault}{\color{blue}\underline{GitHub}}}
+        \vspace{2pt}
+        
+        \resumeItem{\normalsize{\textbf{Ecobizz: An E-commerce App}, An app built using Dart language and Flutter SDK. 
+        \newline
+        Features:
+        \begin{itemize}
+            \item Runs on both iOS and Android devices.
+            \item A platform for sustainable products.
+        \end{itemize}}  
+        \href{https://github.com/PriyanshuKSharma/EcoBizz-Sustainably-Yours---GDSC-Solution-Challenge-2024.git}{\color{blue}\underline{GitHub}}}
+        \vspace{2pt}
+        
+        \resumeItem{\normalsize{\textbf{Li-Fi Tech}, Research work about Light Fidelity. 
+        \newline
+        Features:
+        \begin{itemize}
+            \item A new way to share information.
+            \item Developed an IoT device through which messages can be passed using light instead of Wi-Fi.
+        \end{itemize}} 
+        \href{https://github.com/PrajwalUlli/LiFi.git}{\color{blue}\underline{GitHub}}}
+        
+    \resumeItemListEnd \vspace{2pt}
+%
+
+
+%-----------EXTRACURRICULAR---------------
+\section{\color{airforceblue}EXTRA-CURRICULAR ACTIVITIES}
+    
+      \resumeItemListStart
+        \resumeItem{\normalsize{\textbf{Vice President} in Matheletes(Maths Club) - {March 2023 - July 2025} }} 
+        \vspace{-5pt}
+        
+        \resumeItem{\normalsize{\textbf{Core Member} in Happier and Safer Internet Club - } {October 2023 - October 2024}}    
+        \vspace{-5pt}
+
+        % copy and paste above resumeItem block to add more 
+      \resumeItemListEnd 
+
+
+%-----------CERTIFICATIONS---------------
+\section{\color{airforceblue}CERTIFICATIONS}
+    
+      \resumeItemListStart
+        \resumeItem{\normalsize{\href{https://training.fortinet.com/pluginfile.php/1/tool_certificate/issues/1725205245/0255279459PS.pdf}{\textbf{Fortinet Certified Fundamentals in Cybersecurity}}}}
+        \vspace{-5pt}
+        \resumeItem{\normalsize{\href{https://training.fortinet.com/pluginfile.php/1/tool_certificate/issues/1726054380/8105663001PS.pdf}{\textbf{Fortinet Certified Associate in Cybersecurity}}}}
+        \vspace{-5pt}
+        \resumeItem{\normalsize{\href{https://verify.skilljar.com/c/ki8nr3rcqek6}{\textbf{Zscaler: Fundamentals of Cybersecurity (EDU-102)}}}}
+        \vspace{-5pt}
+        \resumeItem{\normalsize{\href{https://verify.skilljar.com/c/s439vf56ibca}{\textbf{Zscaler: Zero Trust Certified Associate (ZTCA)}}}}
+        \vspace{-5pt}
+        
+
+        % copy and paste above resumeItem block to add more 
+      \resumeItemListEnd
+
+  % copy and paste above resumeItem block to add more 
+\resumeItemListEnd 
+
+
+
+
+
+\vspace{-12pt}
+
+\end{document}
