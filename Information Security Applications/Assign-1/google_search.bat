@@ -1,0 +1,10 @@
+@echo off
+start https://www.google.com/search?q=www.oracle.com/in/
+start https://www.google.com/search?q=www.oracle.com/in/+filetype:pdf
+start https://www.google.com/search?q=www.oracle.com/in/+inurl:admin
+start https://www.google.com/search?q="%40oracle.com"
+start https://www.google.com/search?q=cache:oracle.com
+start https://www.google.com/search?q=related:oracle.com
+start https://www.google.com/search?q=www.oracle.com/in/+confidential
+start https://www.google.com/search?q=intitle:"index+of"+"parent+directory"+www.oracle.com/in/
+start https://www.google.com/search?q=www.oracle.com/in/+"Error+404"+OR+"SQL+syntax+error"
